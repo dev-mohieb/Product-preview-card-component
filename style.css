@@ -98,6 +98,7 @@ main {
     position: absolute;
     top: .6rem;
     right: -4.5rem;
+    text-decoration: line-through;
 }
 
 .price-area button {
