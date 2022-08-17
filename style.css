@@ -1,0 +1,157 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    /*Primary*/
+    --dark-cyan: hsl(158, 36%, 37%);
+    --darker-cyan: hsl(158, 36%, 17%);
+    --lighter-cyan: hsl(158, 36%, 50%);
+    --cream: hsl(30, 38%, 92%);
+
+    /*Neutral*/
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-gray-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+
+    /*Body Copy*/
+    --p-font-size: 14px;
+
+    /*Font*/
+    --secondary-font: 'Montserrat', sans-serif;
+    /*Weights: 500, 700*/
+
+    --primary-font: 'Fraunces', sans-serif;
+    /*Weights: 700*/
+}
+body {
+    background-color: var(--cream);
+    margin: 1rem;
+    font-size: var(--p-font-size);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+main {
+    max-width: 100vw;
+    background-color: var(--white);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border-radius: 10px;
+}
+.image {
+    min-width: 50%;
+}
+.image img {
+    max-width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.info-area, .price-area {
+    padding: 1.5rem;
+}
+.info-area h3, p {
+    font-family: var(--secondary-font);
+}
+.price-area h2, .discount, .info-area h1 {
+    font-family: var(--primary-font);
+}
+.info-area h3, p, .discount {
+    font-weight: 300;
+    color: var(--dark-gray-blue);
+}
+.info-area h3 {
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+.info-area h1 {
+    margin: 1rem 0;
+    line-height: 2rem;
+    font-size: 2rem;
+}
+.info-area p {
+    line-height: 1.4rem;
+}
+.price-area {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    justify-content: center;
+}
+.price-area h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--dark-cyan);
+    position: relative;
+    width: fit-content;
+}
+.price-area h2::after {
+    content: '$169.99';
+    font-size: var(--p-font-size);
+    color: var(--dark-gray-blue);
+    font-family: var(--secondary-font);
+    font-weight: 300;
+    position: absolute;
+    top: .6rem;
+    right: -4.5rem;
+}
+
+.price-area button {
+    padding: 1rem;
+    background-color: var(--dark-cyan);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-family: var(--secondary-font);
+    border-radius: 7px;
+    border: 0;
+    font-size: var(--p-font-size);
+    transition: background-color .2s ease;
+}
+.price-area button:hover {
+    cursor: pointer;
+    background-color: var(--lighter-cyan);
+}
+.price-area button:active {
+    cursor: pointer;
+    background-color: var(--darker-cyan);
+}
+#icon {
+    margin-right: .5rem;
+    font-size: var(--p-font-size);
+}
+
+footer {
+    margin-top: 1rem;
+    font-family: var(--secondary-font);
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    color: var(--lighter-cyan);
+}
+a:active {
+    color: var(--darker-cyan);
+}
+
+@media (min-width: 574px) {
+    main {
+        max-width: 600px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        border-radius: 10px;
+        margin: auto;
+    }
+    .image img {
+        border-radius: 10px 0 0 10px;
+        height: 100%;
+        object-fit: cover;
+    }
+}
